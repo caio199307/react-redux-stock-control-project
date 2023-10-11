@@ -4,6 +4,7 @@ import Form from '../../shared/Form'
 import Input from '../../shared/Input'
 import Button from '../../shared/Button'
 import { Product } from '../../shared/Table/Table.mockdata'
+import withPermission from '../../utils/HOC/withPermission'
 
 declare interface InitialFormState {
   _id?: string
@@ -83,8 +84,8 @@ const ProductForm: React.FC<ProductFormProps> = (props) => {
     
     setForm(initialFormState)
   }
-
-  return <Form title="Product form" onSubmit={handleFormSubmit}>
+    
+    return <Form title="Product form" onSubmit={handleFormSubmit}>
     <Input
       onChange={handleInputChange}
       value={form.name}
@@ -122,4 +123,4 @@ const ProductForm: React.FC<ProductFormProps> = (props) => {
   </Form>
 }
 
-export default ProductForm
+export default (ProductForm)
